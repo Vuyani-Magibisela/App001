@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Home</h1>
+
+<h1>Projects</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for project in projects %}
+        <tr>
+            <td><a href="/project/{{project.id}}"> {% if project.topRated %} <strong>TOP RATED</strong>{% endif %}</a></td>
+            <td>{{project.description}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>
+
+
+{% endblock content %}
