@@ -31,7 +31,8 @@ def home(request):
 
 def project(request, pk):
     projectObj = Project.objects.get(id=pk)
-    
-    return render(request, 'blog/single-project.html',{ 'project': projectObj} )
+    tags = projectObj.tags.all()
+    context = {'project': projectObj,'tags':tags}
+    return render(request, 'blog/single-project.html',context)
 
 

@@ -15,7 +15,7 @@
     <tbody>
         {% for project in projects %}
         <tr>
-            <td><a href="/project/{{project.id}}"> {% if project.topRated %} <strong>TOP RATED</strong>{% endif %}</a></td>
+            <td><a href="{% url 'project' project.id %}"> {{project.title}}</a></td>
             <td>{{project.description}}</td>
         </tr>
         {% endfor %}
