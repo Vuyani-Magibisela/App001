@@ -25,7 +25,7 @@ projectList = [
 
 
 def home(request):
-    projects = Project.objects.all()  
+    projects = Project.objects.all() 
     context = {'projects': projects}
     return render(request, 'blog/home.html', context)
 
